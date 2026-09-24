@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aw-124-v2';
+const CACHE_NAME = 'aw-124-v3';
 const APP_SHELL = [
   './',
   './index.html',

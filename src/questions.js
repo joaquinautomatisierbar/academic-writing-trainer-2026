@@ -22,7 +22,7 @@ export const QUESTIONS = Object.freeze([
     "prompt": "A student is writing a seminar paper in English. To improve her phrasing, she uses AI to generate alternative versions for several sections. She compares these with her original text, often adopting phrasing that seems more precise, and adjusts individual passages. What risk does this approach pose in terms of human agency?",
     "choices": [
       "The traceability of source work may be compromised",
-      "The linguistic quality of the text automatically deteriorates as a result of using",
+      "The linguistic quality of the text automatically deteriorates as a result of using AI",
       "Responsibility for content-related decisions may be shifted to the AI, sometimes without the user realizing it",
       "Originality is no longer guaranteed, since AI was used in the writing process"
     ],
@@ -89,7 +89,7 @@ export const QUESTIONS = Object.freeze([
   {
     "id": "a-007",
     "section": "A",
-    "prompt": "A student uses AI to have complex topics explained to her. The answers seem consistent and well-structured to her and align with her existing understanding. She incorporates key statements into her work without verifying them against academic literature, exploring them further through her own questions, or specifically expanding her understanding of. the topics. Which statement describes the central problem with this approach?",
+    "prompt": "A student uses AI to have complex topics explained to her. The answers seem consistent and well-structured to her and align with her existing understanding. She incorporates key statements into her work without verifying them against academic literature, exploring them further through her own questions, or specifically expanding her understanding of the topics. Which statement describes the central problem with this approach?",
     "choices": [
       "The student narrows the range of her perspectives by focusing on a single representation",
       "The student adopts AI-generated content without revising it sufficiently in terms of language",
@@ -299,7 +299,7 @@ export const QUESTIONS = Object.freeze([
   {
     "id": "c-002",
     "section": "C",
-    "prompt": "Read the following text excerpt: “Studies show that the use of AI tools can improve student efficiency (Milller, 2022; Press, 2025). At the same time, it is argued that such tools enhance the quality of academic work. This development is of great significance, particularly in the higher education context.” Which statement describes the weakness of this text regarding academic transparency?",
+    "prompt": "Read the following text excerpt: “Studies show that the use of AI tools can improve student efficiency (Müller, 2022; Press, 2025). At the same time, it is argued that such tools enhance the quality of academic work. This development is of great significance, particularly in the higher education context.” Which statement describes the weakness of this text regarding academic transparency?",
     "choices": [
       "The statements are formulated too generally and do not sufficiently account for different contexts",
       "The sources used are too specific and therefore cannot be generalized",
@@ -327,7 +327,7 @@ export const QUESTIONS = Object.freeze([
   {
     "id": "c-004",
     "section": "C",
-    "prompt": "Read the following two texts: Text A: “Several observations from practice suggest that the use of AI tools increases students’ efficiency. This assessment is confirmed in various case studies.” . Text B: “A study involving 120 students shows that the use of AI tools reduces the time required to complete assignments. The study describes its methodology and data analysis and reports the corresponding results.” Which statement describes the key difference in terms of academic knowledge?",
+    "prompt": "Read the following two texts: Text A: “Several observations from practice suggest that the use of AI tools increases students’ efficiency. This assessment is confirmed in various case studies.” Text B: “A study involving 120 students shows that the use of AI tools reduces the time required to complete assignments. The study describes its methodology and data analysis and reports the corresponding results.” Which statement describes the key difference in terms of academic knowledge?",
     "choices": [
       "Unlike Text A, Text B is based on a systematically collected dataset and allows for a more well-founded assessment",
       "Text A is more broadly supported, while Text B focuses on a single study",
@@ -601,7 +601,7 @@ export const QUESTIONS = Object.freeze([
       "“The influence of social media on students’ well-being is an important topic in research.”"
     ],
     "correctIndex": 0,
-    "explanation": "Key principle: “The frequency of social media use has a negative impact on students’ well-being.”.",
+    "explanation": "Key principle: “The frequency of social media use has a negative impact on students’ well-being.”",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {
@@ -615,7 +615,7 @@ export const QUESTIONS = Object.freeze([
       "“Why do students choose a vegetarian diet?”"
     ],
     "correctIndex": 3,
-    "explanation": "Key principle: “Why do students choose a vegetarian diet?”.",
+    "explanation": "Key principle: “Why do students choose a vegetarian diet?”",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {
@@ -791,13 +791,13 @@ export const QUESTIONS = Object.freeze([
     "section": "D2",
     "prompt": "A student is working on her thesis paper and incorporates several academic sources into her argument. Which of the following passages best demonstrates a successful synthesis of academic sources?",
     "choices": [
-      "“Miiller (2020) shows that AI increases writing speed. Meier (2021) examines the influence of AI on text quality.”",
+      "“Müller (2020) shows that AI increases writing speed. Meier (2021) examines the influence of AI on text quality.”",
       "“To answer the research question, several studies were consulted that shed light on different aspects of AI use.”",
-      "“While Milller (2020) emphasizes efficiency gains through AI, Meier (2021) points out qualitative limitations, suggesting that the benefits of AI depend on the context of use.”",
-      "“Miiller (2020) notes that AI has positive effects on writing. Meier (2021) reaches similar conclusions.”"
+      "“While Müller (2020) emphasizes efficiency gains through AI, Meier (2021) points out qualitative limitations, suggesting that the benefits of AI depend on the context of use.”",
+      "“Müller (2020) notes that AI has positive effects on writing. Meier (2021) reaches similar conclusions.”"
     ],
     "correctIndex": 2,
-    "explanation": "Key principle: “While Milller (2020) emphasizes efficiency gains through AI, Meier (2021) points out qualitative limitations, suggesting that the benefits of AI depend on the context of use.”.",
+    "explanation": "Key principle: “While Müller (2020) emphasizes efficiency gains through AI, Meier (2021) points out qualitative limitations, suggesting that the benefits of AI depend on the context of use.”",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {
@@ -891,11 +891,11 @@ export const QUESTIONS = Object.freeze([
     "choices": [
       "Sources are used to support individual statements without the need for further contextualization or connection to the author's own argument",
       "Sources serve primarily to broaden the thematic scope of a text and present it concisely by covering different aspects of a topic",
-      "Sources are primarily used to present relevant information in a structured and clear manner, for example by summarizing several studies in succession (e.g., “Miiller (2020) shows..., Meier (2021) adds...\")",
-      "Sources are used to facilitate steps in the argument, for example by comparing positions, qualifying them, or addressing them as counterarguments (e.g, “While Miiller (2020) .... Meier (2021) shows ...\")"
+      "Sources are primarily used to present relevant information in a structured and clear manner, for example by summarizing several studies in succession (e.g., “Müller (2020) shows..., Meier (2021) adds...\")",
+      "Sources are used to facilitate steps in the argument, for example by comparing positions, qualifying them, or addressing them as counterarguments (e.g., “While Müller (2020) … Meier (2021) shows ...\")"
     ],
     "correctIndex": 3,
-    "explanation": "Key principle: sources are used to facilitate steps in the argument, for example by comparing positions, qualifying them, or addressing them as counterarguments (e.g, “While Miiller (2020) .... Meier (2021) shows ...\").",
+    "explanation": "Key principle: sources are used to facilitate steps in the argument, for example by comparing positions, qualifying them, or addressing them as counterarguments (e.g., “While Müller (2020) … Meier (2021) shows ...\").",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {
@@ -1307,7 +1307,7 @@ export const QUESTIONS = Object.freeze([
   {
     "id": "d4-008",
     "section": "D4",
-    "prompt": "A student presents the following argument in their thesis paper: “Several studies show that people who regularly get up early are, on average, more productive (Schneider, 2019; Baumann, 2021). Therefore, getting up early leads to higher productivity.” Which statement best applies to this argument? .",
+    "prompt": "A student presents the following argument in their thesis paper: “Several studies show that people who regularly get up early are, on average, more productive (Schneider, 2019; Baumann, 2021). Therefore, getting up early leads to higher productivity.” Which statement best applies to this argument?",
     "choices": [
       "The argument is insufficient because no clear claim is made",
       "The argument is convincing because it is logical and there is multiple empirical evidence",
@@ -1441,7 +1441,7 @@ export const QUESTIONS = Object.freeze([
       "“These results show that the effect is clear and applies without exception.”"
     ],
     "correctIndex": 0,
-    "explanation": "Key principle: “These results suggest that the effect may occur under certain conditions.”.",
+    "explanation": "Key principle: “These results suggest that the effect may occur under certain conditions.”",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {
@@ -1567,7 +1567,7 @@ export const QUESTIONS = Object.freeze([
       "A criticism is that while the structure and linguistic quality are convincing, they do not replace the need to verify evidence and subject-matter accuracy J!"
     ],
     "correctIndex": 3,
-    "explanation": "Key principle: a criticism is that while the structure and linguistic quality are convincing, they do not replace the need to verify evidence and subject-matter accuracy J!.",
+    "explanation": "Key principle: a criticism is that while the structure and linguistic quality are convincing, they do not replace the need to verify evidence and subject-matter accuracy J!",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {
@@ -1674,12 +1674,12 @@ export const QUESTIONS = Object.freeze([
     "prompt": "An AI generated the following reference in APA 7 style: “Miller, T., & Schmidt, A. (2021). The impact of artificial intelligence on higher education. Journal of Educational Technology, 15(3), 45-67. DOI: 10.1234/jet.2021.015\" Which statement regarding the DOI citation according to APA 7 is correct?",
     "choices": [
       "The DOI is placed immediately after the article's title",
-      "The DOI should be provided in the format of a URL (https://doi.org/..)",
+      "The DOI should be provided in the format of a URL (https://doi.org/...)",
       "The DOI may only be included if no place of publication is specified",
       "The DOI must be set in italics because it is part of the citation"
     ],
     "correctIndex": 1,
-    "explanation": "Key principle: the DOI should be provided in the format of a URL (https://doi.org/..).",
+    "explanation": "Key principle: the DOI should be provided in the format of a URL (https://doi.org/...).",
     "answerBasis": "academic-review-after-brian-expiry"
   },
   {

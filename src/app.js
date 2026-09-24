@@ -19,6 +19,17 @@ export function deriveHomeView(progress, questions) {
   };
 }
 
+export function deriveSectionMode(section, questions) {
+  const count = section === 'ALL'
+    ? questions.length
+    : questions.filter((question) => question.section === section).length;
+  return {
+    count,
+    allLabel: section === 'ALL' ? `Alle ${count} starten` : `Teil ${section} starten`,
+    shuffleLabel: section === 'ALL' ? 'Alle Fragen mischen' : `Teil ${section} mischen`,
+  };
+}
+
 export function deriveQuestionView(session, progress, questions) {
   if (!session.questionIds.length && session.mode === 'wrong') {
     return { kind: 'empty-wrong', nextAction: 'shuffle' };
@@ -81,6 +92,9 @@ function createController(root) {
 
   function renderHome() {
     const view = deriveHomeView(progress, QUESTIONS);
+    const sectionMode = deriveSectionMode(selectedSection, QUESTIONS);
+    const sectionIds = new Set(QUESTIONS.filter((question) => selectedSection === 'ALL' || question.section === selectedSection).map((question) => question.id));
+    const sectionWrongCount = progress.wrongIds.filter((id) => sectionIds.has(id)).length;
     const ring = `${Math.round((view.percent / 100) * 360)}deg`;
     root.innerHTML = appTemplate(`${masthead()}
       <section class="hero">
@@ -94,9 +108,9 @@ function createController(root) {
       </dl>
       <h2 class="section-heading">Lernmodus</h2>
       <div class="mode-list">
-        <button class="mode-button" data-action="${progress.resume ? 'resume' : 'start'}" data-mode="all"><span class="mode-icon">01</span><span class="mode-copy"><strong>${view.primaryLabel}</strong><small>In der Reihenfolge des Kurses</small></span><span class="mode-count">124</span></button>
-        <button class="mode-button" data-action="start" data-mode="shuffle"><span class="mode-icon">↝</span><span class="mode-copy"><strong>Zufällige Runde</strong><small>Alle Fragen neu gemischt</small></span><span class="mode-count">124</span></button>
-        <button class="mode-button" data-action="start" data-mode="wrong"><span class="mode-icon">↺</span><span class="mode-copy"><strong>Nur meine Fehler</strong><small>Richtig beantworten, um sie abzubauen</small></span><span class="mode-count">${view.wrongCount}</span></button>
+        <button class="mode-button" data-action="${progress.resume ? 'resume' : 'start'}" data-mode="all"><span class="mode-icon">01</span><span class="mode-copy"><strong>${progress.resume ? view.primaryLabel : sectionMode.allLabel}</strong><small>In der Reihenfolge des Kurses</small></span><span class="mode-count">${progress.resume ? progress.resume.questionIds.length : sectionMode.count}</span></button>
+        <button class="mode-button" data-action="start" data-mode="shuffle"><span class="mode-icon">↝</span><span class="mode-copy"><strong>${sectionMode.shuffleLabel}</strong><small>Fragen neu gemischt</small></span><span class="mode-count">${sectionMode.count}</span></button>
+        <button class="mode-button" data-action="start" data-mode="wrong"><span class="mode-icon">↺</span><span class="mode-copy"><strong>Nur meine Fehler</strong><small>Richtig beantworten, um sie abzubauen</small></span><span class="mode-count">${sectionWrongCount}</span></button>
         <button class="mode-button" data-action="exam-setup"><span class="mode-icon">◎</span><span class="mode-copy"><strong>Prüfung simulieren</strong><small>Keine Hinweise bis zur Auswertung</small></span><span class="mode-count">frei</span></button>
       </div>
       <h2 class="section-heading">Teil auswählen</h2>
@@ -201,12 +215,13 @@ function createController(root) {
   }
 
   function renderExamSetup() {
+    const sectionMode = deriveSectionMode(selectedSection, QUESTIONS);
     root.innerHTML = appTemplate(`<section class="setup">
       <button class="close-button" data-action="home" aria-label="Zurück">×</button>
       <p class="question-meta">PRÜFUNGSMODUS</p>
       <h1 class="page-title">Wie viele Fragen?</h1>
       <p class="lede">Keine Rückmeldung während der Runde. Danach siehst du Score, Teilbereiche und jeden Fehler.</p>
-      <div class="field"><label for="exam-count">Fragenzahl (1–124)</label><input id="exam-count" type="number" inputmode="numeric" min="1" max="124" value="20"></div>
+      <div class="field"><label for="exam-count">Fragenzahl (1–${sectionMode.count})</label><input id="exam-count" type="number" inputmode="numeric" min="1" max="${sectionMode.count}" value="${Math.min(20, sectionMode.count)}"></div>
       <button class="primary-button" data-action="start-exam">Prüfung starten</button>
     </section>`);
   }

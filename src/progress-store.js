@@ -11,11 +11,24 @@ export function createEmptyProgress() {
 }
 
 function validProgress(value) {
+  const resumeIsValid = value?.resume === null || (
+    value?.resume
+    && ['all', 'shuffle', 'wrong', 'exam'].includes(value.resume.mode)
+    && Array.isArray(value.resume.questionIds)
+    && value.resume.questionIds.length > 0
+    && Number.isInteger(value.resume.currentIndex)
+    && value.resume.currentIndex >= 0
+    && value.resume.currentIndex < value.resume.questionIds.length
+    && value.resume.answers
+    && typeof value.resume.answers === 'object'
+    && value.resume.status === 'active'
+  );
   return value
     && value.version === 1
     && value.questions
     && Array.isArray(value.wrongIds)
-    && Array.isArray(value.recordedAttemptIds);
+    && Array.isArray(value.recordedAttemptIds)
+    && resumeIsValid;
 }
 
 export function loadProgress(storage = localStorage) {
